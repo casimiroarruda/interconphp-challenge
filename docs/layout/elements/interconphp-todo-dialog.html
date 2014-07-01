@@ -1,0 +1,25 @@
+<link rel="import" href="../components/polymer/polymer.html"/>
+<link rel="import" href="../components/paper-dialog/paper-dialog.html"/>
+<link rel="import" href="../components/paper-input/paper-input.html"/>
+<link href='http://fonts.googleapis.com/css?family=Oxygen:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<polymer-element name="interconphp-todo-dialog" attributes="opened">
+    <template>
+        <style>
+            paper-dialog h1 label{
+                font-family: 'Oxygen', 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+            }
+        </style>
+        <paper-dialog heading="Nova Tarefa">
+            <paper-input label="Título" validate="^.{3,}$" floatinglabel>value</paper-input>
+            <paper-input label="Descrição" validate="^.{3,}$" floatinglabel multiline maxrows="5"></paper-input>
+        </paper-dialog>
+    </template>
+    <script>
+        Polymer('interconphp-todo-dialog', {
+            opened:false,
+            openedChanged:function(){
+                document.querySelector('paper-dialog').toggle()
+            }
+        });
+    </script>
+</polymer-element>

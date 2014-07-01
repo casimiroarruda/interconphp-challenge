@@ -1,0 +1,31 @@
+<link rel="import" href="../components/polymer/polymer.html"/>
+<link rel="import" href="../components/paper-item/paper-item.html"/>
+<link rel="import" href="../components/core-tooltip/core-tooltip.html"/>
+<polymer-element name="interconphp-todo-task-item" attributes="checked title">
+    <template>
+        <style>
+            span.task-done{
+                text-decoration: line-through;
+                color:#666;
+            }
+        </style>
+        <paper-item icon="{{icon}}">
+            <core-tooltip>
+                <span class="{{stateClass}}">{{title}}</span>
+                <div tip><content>This task has no description</content></div>
+            </core-tooltip>
+        </paper-item>
+    </template>
+    <script>
+        Polymer('interconphp-todo-task-item', {
+            checked: false,
+            icon: 'check-box-outline-blank',
+            stateClass: '',
+            title:'',
+            ready:function(){
+                this.icon = (this.checked)?'check-box-outline':'check-box-outline-blank';
+                this.stateClass = (this.checked)?'task-done':'';
+            }
+        });
+    </script>
+</polymer-element>
