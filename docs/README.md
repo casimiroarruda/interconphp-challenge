@@ -14,18 +14,14 @@ Uma aplicação simples feita em diferentes frameworks. Essa é a ideia principa
 #### Tarefa
 
 Uma tarefa é composta por pelo menos 4 atributos como no "Diagrama" a seguir:
-```
+
 |Task        |
-______________
+|------------|
 |id          |
-______________
 |title       |
- _____________
 |description |
-______________
 |status      |
-______________
-```
+
 
 Vocês estão livres para decidir sobre os tipos desses atributos e se os mesmos são suficientes para realizar a tarefa.
  O importante é que pelo menos estes campos sejam mantidos para comparação entre o projeto em cada framework
